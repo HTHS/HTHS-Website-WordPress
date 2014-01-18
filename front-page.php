@@ -48,7 +48,7 @@
 
         <div id="content_left_right">
             <div id="news" class="fancybox">
-                <h2 class="fancytitle">News <a href="<?=get_stylesheet_directory_uri()?>/rss/feed/news" id="feed_icon" title="RSS Feed"><img src="<?=get_stylesheet_directory_uri()?>/images/icons/rss.png" alt="RSS Feed" /></a></h2>
+                <h2 class="fancytitle">News <a href="<?php bloginfo('rss2_url'); ?>" id="feed_icon" title="RSS Feed"><img src="<?=get_stylesheet_directory_uri()?>/images/icons/rss.png" alt="RSS Feed" /></a></h2>
                 <?php
                 $posts = get_posts(array('numberposts' => 4));
                 foreach ($posts as $post): ?>
