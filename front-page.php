@@ -50,14 +50,12 @@
             <div id="news" class="fancybox">
                 <h2 class="fancytitle">News <a href="<?=get_stylesheet_directory_uri()?>/rss/feed/news" id="feed_icon" title="RSS Feed"><img src="<?=get_stylesheet_directory_uri()?>/images/icons/rss.png" alt="RSS Feed" /></a></h2>
                 <?php
-                $news = wp_get_recent_posts(array('numberposts' => 5));
-                foreach ($news as $newsItem): ?>
+                $posts = get_posts(array('numberposts' => 4));
+                foreach ($posts as $post): ?>
                     <?php
                     // ($item->urgent == 1) ? $style = 'style="color:red;"' : $style = '';
                     // TODO: urgent news posts
                     $style = '';
-                    global $post;
-                    $post = $newsItem;
                     setup_postdata($post);
                     ?>
                     <a class="newsitem" href="<?php the_permalink(); ?>">
