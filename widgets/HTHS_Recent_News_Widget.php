@@ -7,6 +7,8 @@ class HTHS_Recent_News_Widget extends WP_Widget {
     }
 
     public function widget($args, $instance) {
+        $num = empty($instance['num']) ? 4 : $instance['num'];
+
         echo $args['before_widget'];
         echo $args['before_title'];
         ?>News <a href="<?php bloginfo('rss2_url'); ?>" id="feed_icon" title="RSS Feed"><img src="<?=get_stylesheet_directory_uri()?>/images/icons/rss.png" alt="RSS Feed" /></a><?php
@@ -14,7 +16,7 @@ class HTHS_Recent_News_Widget extends WP_Widget {
 
         ?>
         <?php
-        $posts = get_posts(array('numberposts' => 4));
+        $posts = get_posts(array('numberposts' => $num));
         global $post;
         foreach ($posts as $post): ?>
             <?php
@@ -35,6 +37,21 @@ class HTHS_Recent_News_Widget extends WP_Widget {
         <?php
 
         echo $args['after_widget'];
+    }
+
+    public function update($new_instance) {
+        $instance['num'] = intval($new_instance['num']);
+        return $instance;
+    }
+
+    public function form($instance) {
+        $num = empty($instance['num']) ? 4 : $instance['num'];
+        ?>
+
+        <p><label for="<?=$this->get_field_id('num')?>">Number of news items to show:</label>
+        <input type="number" value="<?=$num?>" id="<?=$this->get_field_id('num')?>" name="<?=$this->get_field_name('num')?>"></p>
+
+        <?php
     }
 
 }
