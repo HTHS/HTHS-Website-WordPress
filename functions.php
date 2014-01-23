@@ -30,6 +30,18 @@ function hths_widgets_init() {
     require('widgets/HTHS_Weather_Widget.php');
     register_widget('HTHS_Weather_Widget');
 
+    require('widgets/HTHS_Social_Feed_Widget.php');
+    register_widget('HTHS_Social_Feed_Widget');
+
+    require('widgets/HTHS_Stay_Connected_Widget.php');
+    register_widget('HTHS_Stay_Connected_Widget');
+
+    require('widgets/HTHS_Recent_News_Widget.php');
+    register_widget('HTHS_Recent_News_Widget');
+
+    require('widgets/HTHS_One_Call_Now_Widget.php');
+    register_widget('HTHS_One_Call_Now_Widget');
+
     register_sidebar(wp_parse_args(array(
         'name' => 'Main Right Sidebar',
         'id' => 'main_sidebar'
