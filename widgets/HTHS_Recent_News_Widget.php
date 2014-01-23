@@ -9,12 +9,13 @@ class HTHS_Recent_News_Widget extends WP_Widget {
     public function widget($args, $instance) {
         echo $args['before_widget'];
         echo $args['before_title'];
-        ?><a href="<?php bloginfo('rss2_url'); ?>" id="feed_icon" title="RSS Feed"><img src="<?=get_stylesheet_directory_uri()?>/images/icons/rss.png" alt="RSS Feed" /></a><?php
+        ?>News <a href="<?php bloginfo('rss2_url'); ?>" id="feed_icon" title="RSS Feed"><img src="<?=get_stylesheet_directory_uri()?>/images/icons/rss.png" alt="RSS Feed" /></a><?php
         echo $args['after_title'];
 
         ?>
         <?php
         $posts = get_posts(array('numberposts' => 4));
+        global $post;
         foreach ($posts as $post): ?>
             <?php
             // ($item->urgent == 1) ? $style = 'style="color:red;"' : $style = '';
