@@ -46,5 +46,15 @@ function hths_widgets_init() {
         'name' => 'Main Right Sidebar',
         'id' => 'main_sidebar'
     ), $hths_widget_wrapper_args));
+
+    register_sidebar(wp_parse_args(array(
+        'name' => 'Homepage Left Column',
+        'id' => 'home_left'
+    ), $hths_widget_wrapper_args));
+
+    register_sidebar(wp_parse_args(array(
+        'name' => 'Homepage Right Column',
+        'id' => 'home_right'
+    ), $hths_widget_wrapper_args));
 }
 add_action( 'widgets_init', 'hths_widgets_init' );
