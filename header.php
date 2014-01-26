@@ -47,7 +47,8 @@
 				<div id="navbar">
                     <?php wp_nav_menu(array(
                         'theme_location' => 'header-menu',
-                        'container' => false
+                        'container' => false,
+                        'fallback_cb' => false,
                     )); ?>
 				</div>
 				
