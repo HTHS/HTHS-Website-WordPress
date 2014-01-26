@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title><?php if($title != ''): echo $title.' :: '; endif; ?>High Technology High School</title>
+		<title><?php global $title; if($title != ''): echo $title.' :: '; endif; ?>High Technology High School</title>
         <link type="text/css" href="<?=get_stylesheet_directory_uri()?>/style.css" rel="stylesheet" />
         <link type="text/css" href="<?=get_stylesheet_directory_uri()?>/css/mobile.css" rel="stylesheet" />
 		<link type="text/css" href="<?=get_stylesheet_directory_uri()?>/css/jquery-ui-1.8.17.custom.css" rel="stylesheet" />
