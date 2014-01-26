@@ -3,6 +3,9 @@
  * Template Name: Downloads Page
  */
 
+global $title;
+$title = get_the_title();
+
 get_header();
 
 /**
