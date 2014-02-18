@@ -74,10 +74,17 @@ function my_theme_register_required_plugins() {
             'slug' => 'wp-filebase',
             'required' => true,
         ),
+        array(
+            'name' => 'GitHub Updater',
+            'slug' => 'github-updater',
+            'source' => 'github-updater-2.4.5.zip',
+            'required' => false,
+            'version' => '2.4.5',
+        )
     );
 
     $config = array(
-        'default_path' => get_stylesheet_directory() . '/lib/plugins/',
+        'default_path' => get_stylesheet_directory() . '/lib/',
     );
 
     tgmpa( $plugins, $config );
