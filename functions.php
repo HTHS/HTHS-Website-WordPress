@@ -58,3 +58,27 @@ function hths_widgets_init() {
     ), $hths_widget_wrapper_args));
 }
 add_action( 'widgets_init', 'hths_widgets_init' );
+
+
+/**
+ * Include the TGM_Plugin_Activation class.
+ */
+require_once get_stylesheet_directory() . '/lib/class-tgm-plugin-activation.php';
+
+add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
+
+function my_theme_register_required_plugins() {
+    $plugins = array(
+        array(
+            'name' => 'WP-Filebase Download Manager',
+            'slug' => 'wp-filebase',
+            'required' => true,
+        ),
+    );
+
+    $config = array(
+        'default_path' => get_stylesheet_directory() . '/lib/plugins/',
+    );
+
+    tgmpa( $plugins, $config );
+}
