@@ -14,8 +14,24 @@
             <div id="shortcuts" class="fancybox">
                 <h2 class="fancytitle">Portals</h2>
                 <?php
-                // TODO: home page portals
-                //=$this->menu->render_portals()
+                // TODO: home page portals in widget
+                // TODO: use wp_nav_menu walker
+                $menu_name = 'portals';
+                if ( ($menu = wp_get_nav_menu_object( $menu_name ) ) && ( isset($menu) ) ) {
+                    $menu_items = wp_get_nav_menu_items($menu->term_id);
+
+                    foreach ( (array) $menu_items as $key => $menu_item ): ?>
+                        <a class="button_link" href="<?=$menu_item->url?>">
+                            <table>
+                                <tbody><tr>
+                                    <td>&gt;&gt;</td>
+                                    <td><?=$menu_item->title?></td>
+                                </tr>
+                                </tbody></table>
+                        </a>
+                    <?php
+                    endforeach;
+                }
                 ?>
             </div>
             <?php dynamic_sidebar('home_left'); ?>
