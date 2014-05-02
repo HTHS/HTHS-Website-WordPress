@@ -33,7 +33,7 @@ class HTHS_Recent_News_Widget extends WP_Widget {
                 <div class="newsitem_arrow">&gt;</div>
             </a>
         <?php endforeach; ?>
-        <div id="news_archivelink"><a href="<?php home_url(); ?>">News Archives</a></div>
+        <div id="news_archivelink"><a href="<?=get_permalink(get_option('page_for_posts'))?>">News Archives</a></div>
         <?php
 
         echo $args['after_widget'];
