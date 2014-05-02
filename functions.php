@@ -81,7 +81,12 @@ function my_theme_register_required_plugins() {
             'source' => 'github-updater-2.4.5.zip',
             'required' => false,
             'version' => '2.4.5',
-        )
+        ),
+        array(
+            'name' => 'User Photo',
+            'slug' => 'user-photo',
+            'required' => true,
+        ),
     );
 
     $config = array(
@@ -90,3 +95,13 @@ function my_theme_register_required_plugins() {
 
     tgmpa( $plugins, $config );
 }
+
+
+// Teacher user role
+// TODO: refactor into separate plugin from theme
+function add_teacher_user_role() {
+    add_role('hths_teacher', __('HTHS Teacher'), array(
+        'read' => true
+    ));
+}
+add_action('after_setup_theme', 'add_teacher_user_role');
