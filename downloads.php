@@ -13,7 +13,7 @@ get_header();
  */
 global $wpdb;
 
-$types = $wpdb->get_results('SELECT * from `wp_wpfb_cats`');
+$types = $wpdb->get_results('SELECT * from `wp_wpfb_cats` ORDER BY `cat_name` ASC');
 $forms = $wpdb->get_results('SELECT * from `wp_wpfb_files`');
 $filebase_options = get_option('wpfilebase');
 
