@@ -222,5 +222,7 @@ function get_mime_by_extension($file)
     </div>
 </div>
 
+<!-- Zach was here -->
+
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
